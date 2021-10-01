@@ -1,0 +1,8 @@
+body {
+  background-color: #ddf8e7;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}

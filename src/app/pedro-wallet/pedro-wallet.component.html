@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="h2 text-center my-3">Carteira Virtual</h1>
+
+      <div class="alert alert-secondary">
+        Saldo Atual: <span>{{ this.wallet.getSaldo().toFixed(3) }}</span> BTC
+      </div>
+
+      <div class="alert alert-info">
+        <ul>
+          <li>
+            Dólar Americano: $
+            <span *ngIf="this.wallet.getSaldoDolar() != null">{{
+              this.wallet.getSaldoDolar().toFixed(3)
+            }}</span>
+          </li>
+          <li>
+            Euro: €
+            <span *ngIf="this.wallet.getSaldoEuro() != null">
+              {{ this.wallet.getSaldoEuro() }}</span
+            >
+          </li>
+          <li>
+            Real: R$
+            <span *ngIf="this.wallet.getSaldoReal() != null">{{
+              this.wallet.getSaldoReal()
+            }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="alert alert-warning">
+        <div class="text-center">
+          <label class="form-label">
+            Digite o valor em BRL
+            <input
+              class="form-control form-control-sm"
+              type="number"
+              #valor
+              min="0"
+            />
+          </label>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button
+            class="btn btn-success"
+            (click)="depositarBRL(valor.value); valor.value = ''"
+          >
+            Depositar
+          </button>
+          <button
+            class="btn btn-danger"
+            (click)="sacarBRL(valor.value); valor.value = ''"
+          >
+            Sacar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

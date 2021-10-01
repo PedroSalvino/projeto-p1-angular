@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['']">PLS Wallet</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['']"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['currency']">Currency</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['wallet']">Wallet</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="bg-dark">
+  <ul class="text-white">
+    <li>
+      Dólar Americano
+      <span class="text-success" *ngIf="this.wallet.getStatusDolar() == true"
+        >↑</span
+      >
+      <span class="text-danger" *ngI0f="this.wallet.getStatusDolar() == false"
+        >↓</span
+      >
+    </li>
+    <li>
+      BitCoin
+      <span class="text-success" *ngIf="this.wallet.getStatusBitcoin() == true"
+        >↑</span
+      >
+      <span class="text-danger" *ngI0f="this.wallet.getStatusBitcoin() == false"
+        >↓</span
+      >
+    </li>
+    <li>
+      Euro
+      <span class="text-success" *ngIf="this.wallet.getStatusEuro() == true"
+        >↑</span
+      >
+      <span class="text-danger" *ngI0f="this.wallet.getStatusEuro() == false"
+        >↓</span
+      >
+    </li>
+  </ul>
+</div>
